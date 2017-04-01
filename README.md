@@ -20,3 +20,7 @@ branch (this is called "continuous integration / deployment"). Before deploying 
 > NOTE: Because `grunt` is run _when deploying the application on Heroku_, if the 
 build fails, the site will NOT be visible! Ensure the entire `grunt` build runs successfully
 before merging into `master`.
+
+## API Information
+
+The base URL for the data API is `https://platypus-hotelier-api.herokuapp.com/api/`
