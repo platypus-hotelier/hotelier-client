@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-    angular.module('login',[]);
+    angular.module('hotel',[]);
     // TODO: add dependencies later
 
 }());
