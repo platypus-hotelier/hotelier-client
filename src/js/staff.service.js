@@ -1,11 +1,12 @@
 (function() {
   'use strict';
 
-  angular.module('login').factory('LoginService', LoginService);
+  angular.module('hotel').factory('LoginService', LoginService);
 
   LoginService.$inject = ['$http'];
 
-  function LoginService() {
+  function LoginService($http) {
+
 
   }
 

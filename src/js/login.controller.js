@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('login').controller('LoginController', LoginController);
+  angular.module('hotel').controller('LoginController', LoginController);
 
   LoginController.$inject = ['StaffService'];
 
