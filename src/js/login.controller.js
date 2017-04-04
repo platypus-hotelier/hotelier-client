@@ -8,6 +8,9 @@
   function LoginController(StaffService){
     let vm = this;
 
+    function functionName() {
+
+    }
 
 
 
