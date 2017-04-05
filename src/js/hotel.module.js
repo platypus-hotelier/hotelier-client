@@ -8,12 +8,10 @@
     function routerConfig($stateProvider, $urlRouterProvider) {
 
       $stateProvider
-        .$state({
+        .state({
           name: 'home',
           url: '',
           templateUrl: 'views/home-page.template.html'
-          
-
         });
 
     }
