@@ -3,7 +3,8 @@
     <head>
         <meta charset='utf-8'>
         <title>Hotelier</title>
-
+        <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
+        <link href='style.css' rel='stylesheet'>
         <meta name='description' content=''>
         <meta name='author' content=''>
         <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
@@ -11,12 +12,30 @@
        <link rel='stylesheet' href='style.css'>
     </head>
     <body>
+
+      <header>
+        <h1>Hotelier</h1>
+        <h2>Easier reservations for today, tomorrow.</h2>
+        <aside class='menuIcon'><a href='#'class='glyphicon glyphicon-menu-hamburger'></a></aside>
+      </header>
+        <nav>
+          <ul>
+            <li>home</li>
+            <li>about our hotel</li>
+            <li>all guests</li>
+            <li>create guests</li>
+            <li>create reservation</li>
+            <li>reservations</li>
+            <li>log out</li>
+            <li>log in</li>
+          </ul>
+        </nav>
+      
       <main ui-view></main>
 
       <footer>&copy 2017 The Iron Yard Students</footer>
       <script src='angular.js'></script>
-      <script src='//unpkg.com/angular-ui-router/release/angular-ui-router.min.js'></script> --> -->
+      <script src='//unpkg.com/angular-ui-router/release/angular-ui-router.min.js'></script>
       <script src='/js/hotel.module.js'></script>
-
     </body>
 </html>
