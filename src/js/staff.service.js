@@ -3,7 +3,7 @@
 
   angular.module('hotel').factory('StaffService', StaffService);
 
-  LoginService.$inject = ['$http'];
+  StaffService.$inject = ['$http'];
 
   function StaffService($http) {
 
