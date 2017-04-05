@@ -33,14 +33,16 @@
 
     /**
      * Retrieves a single staff member record
-     * @return {Promise} 
+     * @return {Promise}
      */
-    function getStaff() {
+    function getStaff(staff) {
       return $http({
         url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/:id',
         method: 'get'
       })
       .then(function handleResponse(response) {
+        console.log(response.data);
+
         return response.data;
       });
 
@@ -54,6 +56,8 @@
           method: 'get'
         })
         .then(function handleResponse(response) {
+          console.log(response.data);
+
           return response.data;
         });
 

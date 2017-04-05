@@ -3,7 +3,7 @@
 
   angular.module('hotel').controller('StaffController', StaffController);
 
-  LoginController.$inject = ['StaffService'];
+  StaffController.$inject = ['StaffService'];
 
   function StaffController(StaffService){
     let vm = this;
