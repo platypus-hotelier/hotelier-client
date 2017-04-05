@@ -6,7 +6,7 @@
   function GuestService($http){
     /**
      * getAllGuests should
-     * @return {Promise} 
+     * @return {Promise}
      */
    function getAllGuests(){
      return $http({
@@ -20,7 +20,7 @@
 
    }
    return {
-     getAllGuests: getAllStaff
+     getAllGuests: getAllGuests
    };
   }
 }());
