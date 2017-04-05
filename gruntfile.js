@@ -4,11 +4,17 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    clean: ['build/'],
 
     copy: {
       html: {
         files: [
-          { expand: true, cwd: 'src/', src: 'index.html', dest: 'build/' }
+          {
+            expand: true,
+            cwd: 'src/',
+            src: 'index.html',
+            dest: 'build/'
+          }
         ]
       },
       images: {
@@ -29,6 +35,23 @@ module.exports = function(grunt) {
         }
       }
     },
+    babel: {
+      all: {
+        options: {
+          sourceMap: true,
+          presets: ['es2015']
+        },
+        files: {
+          'build/js/app.js' : 'build/js/app.js'
+        }
+      }
+    },
+    concat: {
+      dist: {
+        src: ['src/js/hotel.module.js', 'src/js/**/*.js'],
+        dest: 'build/js/app.js'
+      }
+    },
     watch: {
       css: {
         files:['style.css'],
@@ -42,6 +65,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-babel');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('default', [ 'copy', 'sass']);
+  grunt.registerTask('default', [ 'clean', 'concat', 'babel', 'copy', 'sass']);
 };
