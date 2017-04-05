@@ -5,7 +5,7 @@
   GuestService.$inject = ['$http'];
   function GuestService($http){
     /**
-     * getAllGuests should
+     * getAllGuests should get the guests
      * @return {Promise}
      */
    function getAllGuests(){
