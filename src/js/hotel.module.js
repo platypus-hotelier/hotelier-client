@@ -16,7 +16,7 @@
         .state({
           name: 'staff-login',
           url: '/login',
-          templateUrl: 'views/home-page.template.html',
+          templateUrl: 'views/staff-login.template.html',
           controller: 'StaffController',
           controllerAs: 'staffCtrl'
         })
