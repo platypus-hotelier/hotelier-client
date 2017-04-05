@@ -1,11 +1,11 @@
 (function() {
   'use strict';
 
-  angular.module('hotel').controller('LoginController', LoginController);
+  angular.module('hotel').controller('StaffController', StaffController);
 
   LoginController.$inject = ['StaffService'];
 
-  function LoginController(StaffService){
+  function StaffController(StaffService){
     let vm = this;
 
     function functionName() {
