@@ -14,9 +14,14 @@
           templateUrl: 'views/home-page.template.html'
         })
         .state({
+          name: 'about-us',
+          url: '/about-us',
+          templateUrl: 'views/about-us.template.html'
+        })
+        .state({
           name: 'staff-login',
           url: '/login',
-          templateUrl: 'views/home-page.template.html',
+          templateUrl: 'views/staff-login.template.html',
           controller: 'StaffController',
           controllerAs: 'staffCtrl'
         })
