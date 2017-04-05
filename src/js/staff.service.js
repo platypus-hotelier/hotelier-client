@@ -41,8 +41,6 @@
         method: 'get'
       })
       .then(function handleResponse(response) {
-        console.log(response.data);
-
         return response.data;
       });
 
@@ -56,8 +54,6 @@
           method: 'get'
         })
         .then(function handleResponse(response) {
-          console.log(response.data);
-
           return response.data;
         });
 
