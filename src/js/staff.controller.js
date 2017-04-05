@@ -13,7 +13,7 @@
     vm.login = function login(staffLogin) {
           StaffService.login(staffLogin.email, staffLogin.password)
             .then(function goToAllRes() {
-              $state.go('allRes');
+              $state.go('reservations');
             });
         };
 
