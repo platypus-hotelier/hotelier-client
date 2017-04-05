@@ -14,9 +14,9 @@ module.exports = function(grunt) {
       images: {
         files: [
           {
-            cwd:'src/images',
+            cwd:'src/img',
             src:['*.jpg'],
-            dest:'build/images/',
+            dest:'build/img/',
             expand: true
           }
         ]
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     sass: {
       allSass: {
         files:{
-          'build/styles.css' : 'src/sass/main.scss'
+          'build/style.css' : 'src/sass/main.scss'
         }
       }
     },
