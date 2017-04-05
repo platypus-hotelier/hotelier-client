@@ -8,11 +8,14 @@
   function StaffController(StaffService){
     let vm = this;
 
-    function functionName() {
+    vm.staffLogin = {};
 
-    }
-
-
+    vm.login = function login(staffLogin) {
+          StaffService.login(staffLogin.email, staffLogin.password)
+            .then(function goToAllRes() {
+              $state.go('allRes');
+            });
+        };
 
 
 
