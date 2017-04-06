@@ -78,7 +78,18 @@ module.exports = function(grunt) {
         files:['src/index.html'],
         tasks: ['copy']
       }
-    }
+    },
+
+    jshint: {
+      appjs: {
+        options: {
+          jshintrc: '.jshintrc'
+        },
+        files: {
+          src: ['src/**/*.js']
+        }
+      }
+    },
 
 
   });
@@ -89,6 +100,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-karma');
 
-  grunt.registerTask('default', [ 'clean', 'concat', 'babel', 'copy', 'sass']);
+
+  grunt.registerTask('default', [ 'jshint', 'clean', 'concat', 'babel', 'copy', 'sass']);
 };
