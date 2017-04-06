@@ -2,14 +2,16 @@ header {
   padding: 1em;
   background: url(/img/red-wall.jpg);
   background-size: cover;
+  display: flex;
+  justify-content: space-between;
   h1 {
-    color: #FFFFFF;
+    color: $headerFontColor;
   }
   h2{
-    color: #FFFFFF;
+    color: $headerFontColor;
     font-size: 1em;
   }
   a {
-    color: #FFFFFF;
+    color: $headerFontColor;
   }
 }
