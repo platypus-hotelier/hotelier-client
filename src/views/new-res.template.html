@@ -1,6 +1,6 @@
 <h2>Create New Reservation</h2>
 
-<form class='form-group'>
+<form class='form-group col-lg-8'>
 
   <label for='checkin'>Check In</label>
   <input type='date' name='checkin' class='form-control' ng-model='staffCtrl.reservations.checkin'>
@@ -10,7 +10,7 @@
 
   <label for='numberOfGuests'>Number Of Guests</label>
   <input type='number' min='1' name='numberOfGuests' class='form-control'
-         ng-model='staffCtrl.reservations.numberOfGuests'>
+         ng-model='staffCtrl.reservations.numberOfGuests' placeholder='1'>
 
   <label for='guestId'>Guest</label>
   <input type='text' name=guestId class='form-control'
@@ -19,5 +19,5 @@
   <label for='roomId'>Room</label>
   <input type='text' name='roomId' class='form-control'
          ng-model='staffCtrl.reservations.roomId' placeholder='Room ID #'>
-         
+
 </form>

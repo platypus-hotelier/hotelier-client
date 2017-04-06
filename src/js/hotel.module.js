@@ -40,7 +40,7 @@ console.log('this is in the router config thingy');
         })
         .state({
           name: 'new-res',
-          url: 'new-reservation',
+          url: '/new-reservation',
           templateUrl: 'views/new-res.template.html',
           controller: 'StaffController',
           controllerAs: 'staffCtrl'
