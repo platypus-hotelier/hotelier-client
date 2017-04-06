@@ -1,6 +1,6 @@
 <h2>Create New Reservation</h2>
 
-<form class='form-group col-lg-8'>
+<form ng-submit='staffCtrl.createRes(staffCtrl.reservations)' class='form-group col-lg-8'>
 
   <label for='checkin'>Check In</label>
   <input type='date' name='checkinDate' class='form-control' ng-model='staffCtrl.reservations.checkinDate'>
@@ -19,5 +19,7 @@
   <label for='roomId'>Room</label>
   <input type='text' name='roomId' class='form-control'
          ng-model='staffCtrl.reservations.roomId' placeholder='Room ID #'>
+
+  <button type='submit' name='createReservation' class='btn btn-default'>Make Reservation</button>
 
 </form>
