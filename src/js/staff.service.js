@@ -3,7 +3,7 @@
 
   angular.module('hotel').factory('StaffService', StaffService);
 
-  LoginService.$inject = ['$http'];
+  StaffService.$inject = ['$http'];
 
   function StaffService($http) {
 
@@ -33,9 +33,9 @@
 
     /**
      * Retrieves a single staff member record
-     * @return {Promise} 
+     * @return {Promise}
      */
-    function getStaff() {
+    function getStaff(staff) {
       return $http({
         url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/:id',
         method: 'get'

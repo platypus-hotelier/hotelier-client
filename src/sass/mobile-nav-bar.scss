@@ -1,15 +1,7 @@
-header {
-  padding: 1em;
-  background: url(/images/red-wall.jpg);
-  background-size: cover;
-  h1 {
+ul {
+  list-style-type: none;
+  li {
     color: #FFFFFF;
-  }
-  h2{
-    color: #FFFFFF;
-    font-size: 1em;
-  }
-  a {
-    color: #FFFFFF;
+    text-decoration: none;
   }
 }
