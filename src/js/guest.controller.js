@@ -12,7 +12,7 @@
      * getAllGuests should be able to retrieve all guests in the database
      * @return {Promise}
      */
-    vm.getAllGuests() = function getAllGuests(){
+    vm.getAllGuests = function getAllGuests(){
       GuestService.getAllGuests()
       .then(function handleGuestData(data){
         vm.guests = data;
