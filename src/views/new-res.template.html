@@ -1,1 +1,23 @@
-<h2>INSERT NEW RESERVATION FORM HERE</h2>
+<h2>Create New Reservation</h2>
+
+<form class='form-group'>
+
+  <label for='checkin'>Check In</label>
+  <input type='date' name='checkin' class='form-control' ng-model='staffCtrl.reservations.checkin'>
+
+  <label for='checkout'>Check Out</label>
+  <input type='date' name='checkout' class='form-control' ng-model='staffCtrl.reservations.checkout'>
+
+  <label for='numberOfGuests'>Number Of Guests</label>
+  <input type='number' min='1' name='numberOfGuests' class='form-control'
+         ng-model='staffCtrl.reservations.numberOfGuests'>
+
+  <label for='guestId'>Guest</label>
+  <input type='text' name=guestId class='form-control'
+         ng-model='staffCtrl.reservations.guestId' placeholder='Guest ID #'>
+
+  <label for='roomId'>Room</label>
+  <input type='text' name='roomId' class='form-control'
+         ng-model='staffCtrl.reservations.roomId' placeholder='Room ID #'>
+         
+</form>
