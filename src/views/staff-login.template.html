@@ -1,0 +1,11 @@
+
+<p ng-show='!stafflogin.email.$valid' class='alert alert-warning'>
+  Sorry, but that is not the correct email and/or password.</p>
+
+<form class='form-group' name='stafflogin'>
+  <label for='email'>Email</label>
+  <input name='email' type='text' class='form-control' placeholder='Staff email' ng-model='staffCtrl.staffLogin.email'>
+  <label for='password'>Password</label>
+  <input name='password' type='password' class='form-control' placeholder='********' ng-model='staffCtrl.staffLogin.password'>
+  <button type='submit' class='form-control btn btn-info' value='Log In'>Log In</button>
+</form>
