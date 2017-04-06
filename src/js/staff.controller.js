@@ -9,6 +9,8 @@
     let vm = this;
 
     vm.staffLogin = {};
+    vm.reservations = [];
+    vm.reservation = {};
 
     vm.login = function login(staffLogin) {
           StaffService.login(staffLogin.email, staffLogin.password)
@@ -17,7 +19,9 @@
             });
         };
 
-
+    vm.createRes = function createRes(reservation) {
+      StaffService.createRes();
+    };
 
   }
 

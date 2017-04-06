@@ -51,18 +51,35 @@
       function getAuth() {
         return $http({
           url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/login',
-          method: 'get'
+          method: 'GET'
         })
         .then(function handleResponse(response) {
           return response.data;
         });
+
+        function createRes(reservation) {
+          return $http({
+            url: 'https://platypus-hotelier-api.herokuapp/api/Reservations',
+            method: 'POST',
+            headers: {
+
+            },
+            data: {
+              content: reservation
+            }
+          })
+          .then(function handleResponse(response) {
+            return response.data;
+          });
+        }
 
       }
       return {
         getAllStaff: getAllStaff,
         login: login,
         getToken: getToken,
-        getAuth: getAuth
+        getAuth: getAuth,
+        createRes: createRes
       };
     }
   }
