@@ -7,7 +7,8 @@
 
   function GuestController(GuestService){
     let vm = this;
-    vm.guests = [];
+    vm.guest = [];
+
     /**
      * getAllGuests should be able to retrieve all guests in the database
      * @return {Promise}
@@ -15,10 +16,11 @@
     vm.getAllGuests = function getAllGuests(){
       GuestService.getAllGuests()
       .then(function handleGuestData(data){
-        vm.guests = data;
+        vm.guest = data;
         console.log(data);
       });
     };
+    vm.getAllGuests();
   }
 
 }());

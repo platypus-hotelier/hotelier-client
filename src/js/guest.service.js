@@ -10,7 +10,7 @@
      */
    function getAllGuests(){
      return $http({
-       url: 'https://platypus-hotelier-api.herokuapp.com/api/guests',
+       url: 'https://platypus-hotelier-api.herokuapp.com/api/Guests',
        method: 'Get'
      })
      .then(function handleResponse(response){
