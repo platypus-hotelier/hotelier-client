@@ -7,6 +7,12 @@
     routerConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
     function routerConfig($stateProvider, $urlRouterProvider) {
 
+      $urlRouterProvider.when('', '/');
+
+      $urlRouterProvider.otherwise('/not-found');
+
+
+console.log('this is in the router config thingy');
       $stateProvider
         .state({
           name: 'home',
