@@ -91,6 +91,23 @@ module.exports = function(grunt) {
       }
     },
 
+    karma: {
+      all: {
+        options: {
+          frameworks: ['mocha', 'chai'],
+          browsers: ['Chrome'],
+          files: [
+            'node_modules/angular/angular.js',
+            'node_modules/angular-mocks/angular-mocks.js',
+            'node_modules/angular-ui-router/release/angular-ui-router.js',
+            'src/js/hotel.module.js',
+            'src/js/**/*.js',
+            'tests/**/*.spec.js'
+          ]
+        }
+      }
+    }
+
 
   });
 
