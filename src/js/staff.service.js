@@ -3,7 +3,7 @@
 
   angular.module('hotel').factory('StaffService', StaffService);
 
-  LoginService.$inject = ['$http'];
+  StaffService.$inject = ['$http'];
 
   function StaffService($http) {
 
@@ -41,8 +41,6 @@
         method: 'get'
       })
       .then(function handleResponse(response) {
-        console.log(response.data);
-
         return response.data;
       });
 
@@ -56,8 +54,6 @@
           method: 'get'
         })
         .then(function handleResponse(response) {
-          console.log(response.data);
-
           return response.data;
         });
 
