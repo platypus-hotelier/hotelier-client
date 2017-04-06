@@ -26,6 +26,16 @@ module.exports = function(grunt) {
             expand: true
           }
         ]
+      },
+      angular: {
+        files: [
+          {
+            cwd: 'node_modules/angular',
+            src: ['angular.js'],
+            dest: 'build/',
+            expand: true
+          }
+        ]
       }
     },
     sass: {
