@@ -53,7 +53,9 @@ console.log('this is in the router config thingy');
         .state({
           name: 'create-guest',
           url: '/guests/create',
-          templateUrl: 'views/create-guest.template.html'
+          templateUrl: 'views/create-guest.template.html',
+          controller: 'GuestController',
+          controllerAs: 'guestCtrl'
         })
         .state({
           name: 'new-guest',
