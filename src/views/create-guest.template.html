@@ -1,2 +1,23 @@
 
 <h2>Create New Guest</h2>
+
+<form class='create-guest'>
+
+    <aside class='form-group'>
+        <label for='name'>Full Name</label>
+        <input type='text' id='name' name='name' placeholder='John Doe' class='form-control' required>
+    </aside>
+
+    <aside class='form-group'>
+        <label for='phone'>Phone Number</label>
+        <input type='tel' id='phone' name='phone' placeholder='555-555-5555' class='form-control' required pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'>
+    </aside>
+
+    <aside class='form-group'>
+        <label for='email'>Email Address</label>
+        <input type='email' id='email' name='email' placeholder='john@doe.com' class='form-control' required>
+    </aside>
+
+    <input type='submit' value='Create Guest' class='btn'>
+
+</form>
