@@ -15,7 +15,6 @@
     */
     function getToken() {
       return token;
-      console.log(token);
     }
 
     /**
@@ -49,9 +48,9 @@
 
     }
     /**
-     * logs user in and assigns a token
-     * @param  {String} email
-     * @param  {String} password
+     * logs user in and gets a token
+     * @param  {string} email
+     * @param  {string} password
      * @return {Promise}
      */
     function login(email,password) {
@@ -69,7 +68,7 @@
       .then(function handleResponse(response) {
         console.log(response);
         console.log(token);
-        localStorage.setItem('token', angular.toJson(response.data.id));
+        localStorage.setItem('token', response.data.id);
         return token = response.data.id;
 
       });
@@ -78,11 +77,35 @@
 
     }
 
+    /**
+     * logs a user out and removes their token
+     * @return {Promise} 
+     */
+    function logout() {
+
+
+      return $http({
+        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/logout',
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token
+        }
+
+
+      })
+      .then(function handleResponse(response){
+        token = null;
+        localStorage.removeItem('token');
+        return token = response.data;
+      });
+    }
 
     return {
       getAllStaff: getAllStaff,
       getToken: getToken,
-      login: login
+      login: login,
+      logout: logout
     };
 
   }
