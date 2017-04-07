@@ -69,16 +69,11 @@
 
         });
         console.log(token);
-<<<<<<< HEAD
+
       }
-      return {
-        getAllStaff: getAllStaff,
-        getToken: getToken,
-        login: login
-      };
 
     }
-=======
+
         localStorage.setItem('token', response.data.id);
         return token = response.data.id;
 
@@ -119,6 +114,6 @@
       logout: logout
     };
 
->>>>>>> master
+
   }
 })();
