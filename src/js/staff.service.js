@@ -43,46 +43,62 @@
       .then(function handleResponse(response) {
         return response.data;
       });
-
-
-
-    }
-    /**
-    * Retrieves authentication data for a staff member
-    * @pr
-    * @return {Promise}
-    */
-    function login(email,password) {
-      return $http({
-        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/login',
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json'
-         },
-        data: {
-          email: email,
-          password: password
+      /**
+      * getAllGuests should get the guests
+      * @return {Promise}
+      */
+      function getAllGuests() {
+        return $http({
+          url: 'https://platypus-hotelier-api.herokuapp.com/api/Guests',
+          method: 'Get',
+          headers: {
+            'Content-Type': 'application/JSON',
+            'Authorization': StaffService.getToken()
+          }
+        })
+        .then(function handleResponse(response) {
+          return response.data;
         }
-      })
-      .then(function handleResponse(response) {
-        console.log(response);
-        console.log(token);
-        localStorage.setItem('token', angular.toJson(response.data.id));
-        return token = angular.toJson(response.data.id);
+        /**
+        * Retrieves authentication data for a staff member
+        * @pr
+        * @return {Promise}
+        */
+        function login(email,password) {
+          return $http({
+            url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/login',
+            method: 'post',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            data: {
+              email: email,
+              password: password
+            }
+          })
+          .then(function handleResponse(response) {
+            console.log(response);
+            console.log(token);
+            localStorage.setItem('token', angular.toJson(response.data.id));
+            return token = angular.toJson(response.data.id);
 
-      });
+          });
 
 
 
-    }
 
 
-    return {
-      getAllStaff: getAllStaff,
-      getToken: getToken,
-      login: login
-    };
 
-  }
+        }
 
-})();
+
+        return {
+          getAllStaff: getAllStaff,
+          getAllGuests: getAllGuests,
+          getToken: getToken,
+          login: login
+        };
+
+      }
+
+    })();
