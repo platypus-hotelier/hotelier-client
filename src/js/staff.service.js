@@ -96,7 +96,7 @@
       .then(function handleResponse(response){
         token = null;
         localStorage.removeItem('token');
-        return response.data;
+        return token = response.data;
       });
     }
 
