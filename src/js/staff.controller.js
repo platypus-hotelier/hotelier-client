@@ -3,9 +3,9 @@
 
   angular.module('hotel').controller('StaffController', StaffController);
 
-  StaffController.$inject = ['StaffService'];
+  StaffController.$inject = ['$state', 'StaffService'];
 
-  function StaffController(StaffService){
+  function StaffController($state, StaffService){
     let vm = this;
 
     vm.staffLogin = {};
@@ -16,6 +16,7 @@
           StaffService.login(staffLogin.email, staffLogin.password)
             .then(function goToAllRes() {
               $state.go('reservations');
+
             });
         };
 
