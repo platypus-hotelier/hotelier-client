@@ -14,52 +14,23 @@
     * @return {String} Staff id authorization key
     */
     function getToken() {
+      console.log(token);
       return token;
     }
 
     /**
-    * Retrieves a list of all staff members
+    * logs user in and gets a token
+    * @param  {string} email
+    * @param  {string} password
     * @return {Promise}
     */
-    function getAllStaff(){
-      return $http({
-        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs',
-        method: 'get'
-      })
-      .then(function handleResponse(response) {
-        return response.data;
-      });
-    }
-
-    /**
-    * Retrieves a single staff member record
-    * @return {Promise}
-    */
-    function getStaff(staff) {
-      return $http({
-        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/:id',
-        method: 'get'
-      })
-      .then(function handleResponse(response) {
-        return response.data;
-      });
-
-
-
-    }
-    /**
-     * logs user in and gets a token
-     * @param  {string} email
-     * @param  {string} password
-     * @return {Promise}
-     */
     function login(email,password) {
       return $http({
         url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/login',
         method: 'post',
         headers: {
           'Content-Type': 'application/json'
-         },
+        },
         data: {
           email: email,
           password: password
@@ -69,8 +40,8 @@
         console.log(response);
         console.log(token);
         localStorage.setItem('token', response.data.id);
-        return token = response.data.id;
-
+        token = response.data.id;
+        return token;
       });
 
 
@@ -78,11 +49,11 @@
     }
 
     /**
-     * logs a user out and removes their token
-     * @return {Promise} 
-     */
+    * logs a user out and removes their token
+    * @return {Promise}
+    */
     function logout() {
-
+      
 
       return $http({
         url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/logout',
@@ -94,20 +65,18 @@
 
 
       })
-      .then(function handleResponse(response){
+      .then(function handleResponse(){
         token = null;
         localStorage.removeItem('token');
-        return token = response.data;
       });
     }
 
     return {
-      getAllStaff: getAllStaff,
       getToken: getToken,
       login: login,
       logout: logout
     };
 
-  }
 
+  }
 })();
