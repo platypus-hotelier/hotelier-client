@@ -9,7 +9,7 @@
     let vm = this;
 
     vm.staffLogin = {};
-
+    
 
     vm.login = function login(staffLogin) {
       console.log('this is a login');
