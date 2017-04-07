@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('hotel').factory(function('ReservationService', ReservationService) {
+  angular.module('hotel').factory('ReservationService', ReservationService);
 
     ReservationService.$inject = ['$http'];
 
@@ -30,13 +30,23 @@
           return response.data;
         });
       }
+
+      function getAllRes(page = 0) {
+        let pagesize = 6;
+
+        return $http({
+          url: 'https://platypus-hotelier-api.herokuapp/api/Reservations?filter={"order": "createTime DESC", "limit":' + pageSize + ',"offset":' + (page * pageSize) + '}',
+          method: 'GET',
+          })
+          .then(function handleResponse(response) {
+            return response.data;
+          });
+      }
       return {
-        createRes: createRes
+        createRes: createRes,
+        getAllRes: getAllRes
       };
 
     }
-
-  });
-
 
 }());
