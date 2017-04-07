@@ -31,8 +31,7 @@
         });
       }
 
-      function getAllRes(page = 0) {
-        let pagesize = 6;
+      function getAllRes() {
 
         return $http({
           url: 'https://platypus-hotelier-api.herokuapp/api/Reservations',
