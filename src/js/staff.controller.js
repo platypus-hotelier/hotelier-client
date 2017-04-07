@@ -12,6 +12,7 @@
     vm.reservations = [];
     vm.reservation = {};
 
+
     vm.login = function login(staffLogin) {
           StaffService.login(staffLogin.email, staffLogin.password)
             .then(function goToAllRes() {
@@ -20,10 +21,12 @@
         };
 
     vm.createRes = function createRes(reservation) {
-      StaffService.createRes();
+      StaffService.createRes(reservation)
+        .then(function goToAllRes() {
+          $state.go('reservations');
+
+        });
     };
-    console.log('gonna run getAuth');
-    getAuth();
   }
 
 }());
