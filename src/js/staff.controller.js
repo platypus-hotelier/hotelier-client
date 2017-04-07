@@ -22,7 +22,8 @@
     vm.createRes = function createRes(reservation) {
       StaffService.createRes();
     };
-
+    console.log('gonna run getAuth');
+    getAuth();
   }
 
 }());

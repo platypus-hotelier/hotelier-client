@@ -54,6 +54,7 @@
           method: 'GET'
         })
         .then(function handleResponse(response) {
+          console.log(response, response.data, response.id);
           return response.data;
         });
 
