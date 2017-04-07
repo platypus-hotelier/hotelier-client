@@ -7,7 +7,7 @@
 
   function StaffService($http) {
 
-    let token = JSON.parse(localStorage.getItem('token'));
+    let token  = localStorage.getItem('token');
 
     /**
     * Returns the authorization token retrieved by getAuth
@@ -15,6 +15,7 @@
     */
     function getToken() {
       return token;
+      console.log(token);
     }
 
     /**
@@ -71,7 +72,7 @@
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
-         },
+        },
         data: {
           email: email,
           password: password
@@ -80,41 +81,17 @@
       .then(function handleResponse(response) {
         console.log(response);
         console.log(token);
-        localStorage.setItem('token', angular.toJson(response.data.id));
-        return token = angular.toJson(response.data.id);
+        localStorage.setItem('token', response.data.id);
+        return token = response.data.id;
+
       });
 
-    }
-
-    function createRes(reservation) {
-      console.log('inside createRes');
-      return $http({
-        url: 'https://platypus-hotelier-api.herokuapp/api/Reservations',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: {
-          reservation: {
-            checkinDate: checkinDate,
-            checkoutDate: checkoutDate,
-            numberOfGuests: numberOfGuests,
-            guestId: guestId,
-            roomId: roomId
-          }
-        }
-      })
-      .then(function handleResponse(response) {
-        console.log('after .then in createRes');
-        return response.data;
-      });
     }
 
     return {
       getAllStaff: getAllStaff,
       getToken: getToken,
       login: login,
-      createRes: createRes
     };
 
   }
