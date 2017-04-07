@@ -77,11 +77,24 @@
 
     }
 
+    function logout() {
+      http({
+        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staff/logout',
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token
+        },
+
+
+      });
+    }
 
     return {
       getAllStaff: getAllStaff,
       getToken: getToken,
-      login: login
+      login: login,
+      logout: logout
     };
 
   }
