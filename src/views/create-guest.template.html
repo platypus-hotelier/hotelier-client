@@ -6,10 +6,14 @@
       ng-submit='createGuest.$valid && guestCtrl.create(guestCtrl.info)'
       novalidate>
 
+  <p class='alert alert-danger' ng-cloak ng-show='guestCtrl.message'>
+    {{guestCtrl.message}}
+  </p>
+
   <aside class='form-group'>
     <label for='name'>Full Name</label>
     <input type='text' id='name' name='name' ng-model='guestCtrl.info.name' placeholder='John Doe' class='form-control' required min='1'>
-    <p ng-cloak ng-show='createGuest.name.$touched && !createGuest.name.$valid'>
+    <p ng-cloak ng-show='createGuest.name.$touched && !createGuest.name.$valid' class='alert alert-danger'>
       Please enter a valid full name
     </p>
   </aside>
@@ -17,7 +21,7 @@
   <aside class='form-group'>
     <label for='phone'>Phone Number</label>
     <input type='tel' id='phone' name='phone' ng-model='guestCtrl.info.phone' placeholder='555-555-5555' class='form-control' required pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'>
-    <p ng-cloak ng-show='createGuest.phone.$touched && !createGuest.phone.$valid'>
+    <p ng-cloak ng-show='createGuest.phone.$touched && !createGuest.phone.$valid' class='alert alert-danger'>
       Please enter a valid phone number (555-555-5555)
     </p>
   </aside>
@@ -25,7 +29,7 @@
   <aside class='form-group'>
     <label for='email'>Email Address</label>
     <input type='email' id='email' name='email' ng-model='guestCtrl.info.email' placeholder='john@doe.com' class='form-control' required>
-    <p ng-cloak ng-show='createGuest.email.$touched && !createGuest.email.$valid'>
+    <p ng-cloak ng-show='createGuest.email.$touched && !createGuest.email.$valid' class='alert alert-danger'>
       Please enter a valid email address
     </p>
   </aside>
