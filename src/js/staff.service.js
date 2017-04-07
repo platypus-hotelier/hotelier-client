@@ -43,28 +43,12 @@
       .then(function handleResponse(response) {
         return response.data;
       });
-      /**
-      * getAllGuests should get the guests
-      * @return {Promise}
-      */
-      function getAllGuests() {
-        return $http({
-          url: 'https://platypus-hotelier-api.herokuapp.com/api/Guests',
-          method: 'Get',
-          headers: {
-            'Content-Type': 'application/JSON',
-            'Authorization': StaffService.getToken()
-          }
-        })
-        .then(function handleResponse(response) {
-          return response.data;
-        }
         /**
         * Retrieves authentication data for a staff member
         * @pr
         * @return {Promise}
         */
-        function login(email,password) {
+        function login(email, password) {
           return $http({
             url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/login',
             method: 'post',
