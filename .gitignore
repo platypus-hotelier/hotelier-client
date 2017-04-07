@@ -8,3 +8,5 @@ build/
 node_modules/
 *.npm
 *.log*
+
+.DS_Store
