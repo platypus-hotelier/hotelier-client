@@ -8,16 +8,13 @@
   function StaffService($http) {
 
     let token  = localStorage.getItem('token');
-
     /**
     * Returns the authorization token retrieved by getAuth
     * @return {String} Staff id authorization key
     */
     function getToken() {
-      console.log(token);
       return token;
     }
-
     /**
     * logs user in and gets a token
     * @param  {string} email
@@ -37,24 +34,16 @@
         }
       })
       .then(function handleResponse(response) {
-        console.log(response);
-        console.log(token);
         localStorage.setItem('token', response.data.id);
         token = response.data.id;
         return token;
       });
-
-
-
     }
-
     /**
     * logs a user out and removes their token
     * @return {Promise}
     */
     function logout() {
-      
-
       return $http({
         url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/logout',
         method: 'post',
@@ -62,21 +51,16 @@
           'Content-Type': 'application/json',
           'Authorization': token
         }
-
-
       })
       .then(function handleResponse(){
         token = null;
         localStorage.removeItem('token');
       });
     }
-
     return {
       getToken: getToken,
       login: login,
       logout: logout
     };
-
-
   }
 })();
