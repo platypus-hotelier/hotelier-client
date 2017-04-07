@@ -22,9 +22,9 @@
          <ul class='nav navbar-nav'>
            <li><a ui-sref='home'>home</a></li>
            <li><a ui-sref='about-us'>about our hotel</a></li>
-           <li><a ui-sref='guests'>all guests</a></li>
-           <li><a ui-sref='create-guest'>create guest</a></li>
-           <li><a ui-sref='reservations'>reservations</a></li>
+           <li ng-show='navCtrl.isLoggedIn()'><a ui-sref='guests'>all guests</a></li>
+           <li ng-show='navCtrl.isLoggedIn()'><a ui-sref='create-guest'>create guest</a></li>
+           <li ng-show='navCtrl.isLoggedIn()'><a ui-sref='reservations'>reservations</a></li>
            <li ng-show='navCtrl.isLoggedIn()'><a href='#' ng-click='navCtrl.logout()'>log out</a></li>
            <li ng-hide='navCtrl.isLoggedIn()'><a ui-sref='staff-login'>log in</a></li>
          </ul>
