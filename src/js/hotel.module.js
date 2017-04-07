@@ -11,8 +11,6 @@
 
       $urlRouterProvider.otherwise('/not-found');
 
-
-console.log('this is in the router config thingy');
       $stateProvider
         .state({
           name: 'home',
