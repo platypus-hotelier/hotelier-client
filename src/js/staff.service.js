@@ -68,7 +68,7 @@
         console.log(response);
         console.log(token);
         localStorage.setItem('token', angular.toJson(response.data.id));
-        return token =  angular.toJson(response.data.id);
+        return token = angular.toJson(response.data.id);
 
       });
 
