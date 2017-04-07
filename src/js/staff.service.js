@@ -15,7 +15,6 @@
     */
     function getToken() {
       return token;
-      console.log(token);
     }
 
     /**
@@ -88,10 +87,41 @@
 
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * logs a user out
+     * @return {[type]} [description]
+     */
+    function logout() {
+
+
+      return $http({
+        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/logout',
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token
+        }
+
+
+      })
+      .then(function handleResponse(response){
+        token = null;
+        localStorage.removeItem('token');
+        return token = response.data;
+      });
+    }
+
+>>>>>>> f5f6f2609ba3ae39ae512cc91f544a8010709111
     return {
       getAllStaff: getAllStaff,
       getToken: getToken,
       login: login,
+<<<<<<< HEAD
+=======
+      logout: logout
+>>>>>>> f5f6f2609ba3ae39ae512cc91f544a8010709111
     };
 
   }
