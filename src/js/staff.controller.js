@@ -10,12 +10,15 @@
 
     vm.staffLogin = {};
 
+
     vm.login = function login(staffLogin) {
+      console.log('this is a login');
           StaffService.login(staffLogin.email, staffLogin.password)
             .then(function goToAllRes() {
               $state.go('reservations');
             });
         };
+
 
 
 

@@ -75,8 +75,12 @@ module.exports = function(grunt) {
         tasks: ['sass']
       },
       html: {
-        files:['src/index.html'],
+        files:['src/index.html', 'src/views/*.html'],
         tasks: ['copy']
+      },
+      js: {
+        files:['src/js/*.js'],
+        tasks: ['concat', 'babel']
       }
     }
 
@@ -90,5 +94,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('default', [ 'clean', 'concat', 'babel', 'copy', 'sass']);
+  grunt.registerTask('default', ['clean', 'concat', 'babel', 'copy', 'sass']);
+
 };
