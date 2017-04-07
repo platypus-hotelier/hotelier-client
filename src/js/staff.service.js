@@ -7,12 +7,12 @@
 
   function StaffService($http) {
 
-    let token;
+    let token = JSON.parse(localStorage.getItem('token'));
 
     /**
-     * Returns the authorization token retrieved by getAuth
-     * @return {String} Staff id authorization key
-     */
+    * Returns the authorization token retrieved by getAuth
+    * @return {String} Staff id authorization key
+    */
     function getToken() {
       return token;
     }
@@ -32,9 +32,9 @@
     }
 
     /**
-     * Retrieves a single staff member record
-     * @return {Promise}
-     */
+    * Retrieves a single staff member record
+    * @return {Promise}
+    */
     function getStaff(staff) {
       return $http({
         url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/:id',
@@ -44,26 +44,45 @@
         return response.data;
       });
 
-      /**
-      * Retrieves authentication data for a staff member
-      * @return {Promise}
-      */
-      function getAuth() {
-        return $http({
-          url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/login',
-          method: 'get'
-        })
-        .then(function handleResponse(response) {
-          return response.data;
-        });
 
-      }
-      return {
-        getAllStaff: getAllStaff,
-        login: login,
-        getToken: getToken,
-        getAuth: getAuth
-      };
+
     }
+    /**
+    * Retrieves authentication data for a staff member
+    * @pr
+    * @return {Promise}
+    */
+    function login(email,password) {
+      return $http({
+        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/login',
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+         },
+        data: {
+          email: email,
+          password: password
+        }
+      })
+      .then(function handleResponse(response) {
+        console.log(response);
+        console.log(token);
+        localStorage.setItem('token', angular.toJson(response.data.id));
+        return token =  angular.toJson(response.data.id);
+
+      });
+
+
+
+    }
+
+
+    return {
+      getAllStaff: getAllStaff,
+      getToken: getToken,
+      login: login
+    };
+
   }
-}());
+
+})();
