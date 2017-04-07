@@ -35,7 +35,7 @@
         let pagesize = 6;
 
         return $http({
-          url: 'https://platypus-hotelier-api.herokuapp/api/Reservations?filter={"order": "createTime DESC", "limit":' + pageSize + ',"offset":' + (page * pageSize) + '}',
+          url: 'https://platypus-hotelier-api.herokuapp/api/Reservations',
           method: 'GET',
           })
           .then(function handleResponse(response) {
