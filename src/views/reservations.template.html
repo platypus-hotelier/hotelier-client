@@ -1,15 +1,17 @@
 <h2>Upcoming Reservations</h2>
 
-<article class='panel panel-info'>
-  <h3 class='panel-header'>{{resCtrl.reservation.checkinDate}} - Room #{{resCtrl.reservation.roomId}}</h3>
+<article ng-repeat='reservation in resCtrl.reservations' class='panel panel-info'>
+  <section class='panel-heading'>
+    <h3 class='panel-title'>{{reservation.checkinDate}} - Room #{{reservation.roomId}}</h3>
+  </section>
 
-  <p class='panel-body col-xs-9'>
+  <p class='panel-body'>
 
-    Guest: GUEST NAME ({{resCtrl.reservation.numberOfGuests}} people)
+    Guest: GUEST NAME ({{reservation.numberOfGuests}} people)
 
-    Check out: {{resCtrl.reservation.checkoutDate}}
+    Check out: {{reservation.checkoutDate}}
 
-    <button type='submit' name='delete' class='btn btn-danger col-xs-3'>Delete</button>
+    <button type='submit' name='delete' class='btn btn-danger col-xs-2'>Delete</button>
   </p>
 
 </article>

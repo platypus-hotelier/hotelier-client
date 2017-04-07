@@ -11,27 +11,32 @@
 
     vm.reservations = [];
     vm.reservation = {};
-    vm.page = -1;
 
     vm.createRes = function createRes(reservation) {
       ReservationService.createRes(reservation)
       .then(function goToAllRes() {
         $state.go('reservations');
-
-      });
-    };
-
-    vm.getAllRes = function getAllRes() {
-      vm.page++;
-      ReservationService.getAllRes(vm.page)
-      .then(function handleResData(data) {
-        vm.reservations = vm.reservations.concat(data);
-        console.log('inside getAllRes', vm.reservations[0]);
       })
       .catch(function handleError(err) {
         console.warn(err);
       });
     };
+
+    vm.getAllRes = function getAllRes() {
+      console.log('calling get all res');
+      ReservationService.getAllRes()
+      .then(function handleResData(data) {
+        console.log('inside getAllRes', vm.reservations[0]);
+        vm.reservations = data;
+        console.log(data);
+      })
+      .catch(function handleError(err) {
+        console.warn(err);
+      });
+    };
+
+    vm.getAllRes();
+
 
   }
 
