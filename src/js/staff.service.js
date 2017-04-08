@@ -50,19 +50,12 @@
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-<<<<<<< HEAD
-          'Authorization': null
-        },
-
-
-=======
           'Authorization': token
         }
       })
       .then(function handleResponse(){
         token = null;
         localStorage.removeItem('token');
->>>>>>> 4197bf341a2f12670b8eb44c54119517fa3c6f5d
       });
     }
 
