@@ -15,23 +15,6 @@
     function getToken() {
       return token;
     }
-
-      /**
-      * Retrieves authentication data for a staff member
-      * @return {Promise}
-      */
-      function getAuth() {
-        return $http({
-          url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/login',
-          method: 'GET'
-        })
-        .then(function handleResponse(response) {
-          console.log(response, response.data, response.id);
-          return response.data;
-        });
-      }
-    }
-
     /**
     * logs user in and gets a token
     * @param  {string} email
@@ -79,6 +62,9 @@
     return {
       getToken: getToken,
       login: login,
+      logout: logout
 
     };
+  }
+
 })();
