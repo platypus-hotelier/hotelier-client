@@ -3,13 +3,8 @@
   <input type='submit' value='Find reservation' class='form-control btn btn-primary submitBtn'>
 </form>
 
-<section>
-  <main>
-    <article>ROOM ONE</article>
-    <article>ROOM TWO</article>
-    <article>ROOM THREE</article>
-    <article>ROOM FOUR</article>
-    <article>ROOM FIVE</article>
-    <article>ROOM SIX</article>
-  </main>
-</section>
+<article ng-repeat='room in roomCtrl.rooms' class='panel'>
+  <h3>ROOM {{room.number}}</h3>
+  <p>from ${{room.rate}} per night</p>
+
+</article>
