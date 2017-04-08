@@ -24,7 +24,7 @@
     function login(email,password) {
       return $http({
         url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/login',
-        method: 'post',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -38,6 +38,7 @@
         token = response.data.id;
         return token;
       });
+
     }
     /**
     * logs a user out and removes their token
@@ -64,10 +65,13 @@
 >>>>>>> 4197bf341a2f12670b8eb44c54119517fa3c6f5d
       });
     }
+
     return {
       getToken: getToken,
       login: login,
       logout: logout
+
     };
   }
+
 })();
