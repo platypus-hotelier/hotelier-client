@@ -15,7 +15,9 @@
         .state({
           name: 'home',
           url: '/',
-          templateUrl: 'views/home-page.template.html'
+          templateUrl: 'views/home-page.template.html',
+          controller: 'RoomController',
+          controllerAs: 'roomCtrl'
         })
         .state({
           name: 'about-us',
