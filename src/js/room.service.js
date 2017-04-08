@@ -8,6 +8,10 @@
 
   function RoomService($http, StaffService) {
 
+    /**
+     * Retrieves a list of all rooms in the hotel
+     * @return {Promise} 
+     */
     function getAllRooms() {
       return $http({
         url: 'https://platypus-hotelier-api.herokuapp.com/api/Rooms',
