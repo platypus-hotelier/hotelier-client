@@ -12,7 +12,7 @@
     vm.rooms = [];
     vm.room = {};
 
-    function getAllRooms() {
+    vm.getAllRooms = function getAllRooms() {
       RoomService.getAllRooms()
       .then(function handleRoomData(data) {
         vm.rooms = data;
@@ -21,8 +21,8 @@
         console.warn(err);
       });
     }
-  }
+    vm.getAllRooms();
 
-  vm.getAllRooms();
+  }
 
 }());
