@@ -8,49 +8,17 @@
   function StaffService($http) {
 
     let token  = localStorage.getItem('token');
-
     /**
     * Returns the authorization token retrieved by getAuth
     * @return {String} Staff id authorization key
     */
     function getToken() {
       return token;
-      console.log(token);
-    }
-
-    /**
-    * Retrieves a list of all staff members
-    * @return {Promise}
-    */
-    function getAllStaff(){
-      return $http({
-        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs',
-        method: 'get'
-      })
-      .then(function handleResponse(response) {
-        return response.data;
-      });
-    }
-
-    /**
-    * Retrieves a single staff member record
-    * @return {Promise}
-    */
-    function getStaff(staff) {
-      return $http({
-        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/:id',
-        method: 'get'
-      })
-      .then(function handleResponse(response) {
-        return response.data;
-      });
-
-
-
     }
     /**
-    * Retrieves authentication data for a staff member
-    * @pr
+    * logs user in and gets a token
+    * @param  {string} email
+    * @param  {string} password
     * @return {Promise}
     */
     function login(email,password) {
@@ -59,44 +27,47 @@
         method: 'post',
         headers: {
           'Content-Type': 'application/json'
-         },
+        },
         data: {
           email: email,
           password: password
         }
       })
       .then(function handleResponse(response) {
-        console.log(response);
-        console.log(token);
         localStorage.setItem('token', response.data.id);
-        return token = response.data.id;
-
+        token = response.data.id;
+        return token;
       });
-
-
-
     }
-
+    /**
+    * logs a user out and removes their token
+    * @return {Promise}
+    */
     function logout() {
-      http({
-        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staff/logout',
+      return $http({
+        url: 'https://platypus-hotelier-api.herokuapp.com/api/Staffs/logout',
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
+<<<<<<< HEAD
           'Authorization': null
         },
 
 
+=======
+          'Authorization': token
+        }
+      })
+      .then(function handleResponse(){
+        token = null;
+        localStorage.removeItem('token');
+>>>>>>> 4197bf341a2f12670b8eb44c54119517fa3c6f5d
       });
     }
-
     return {
-      getAllStaff: getAllStaff,
       getToken: getToken,
       login: login,
       logout: logout
     };
-
   }
-
 })();
