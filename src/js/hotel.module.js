@@ -33,15 +33,15 @@
           name: 'reservations',
           url: '/reservations',
           templateUrl: 'views/reservations.template.html',
-          controller: 'StaffController',
-          controllerAs: 'staffCtrl'
+          controller: 'ReservationController',
+          controllerAs: 'resCtrl'
         })
         .state({
           name: 'new-res',
-          url: 'new-reservation',
+          url: '/new-reservation',
           templateUrl: 'views/new-res.template.html',
-          controller: 'StaffController',
-          controllerAs: 'staffCtrl'
+          controller: 'ReservationController',
+          controllerAs: 'resCtrl'
         })
         .state({
           name: 'guests',
