@@ -83,7 +83,7 @@
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': token
+          'Authorization': null
         },
 
 
