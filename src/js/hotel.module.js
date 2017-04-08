@@ -46,7 +46,9 @@
         .state({
           name: 'guests',
           url: '/guests',
-          templateUrl: 'views/guests.template.html'
+          templateUrl: 'views/guests.template.html',
+          controller:'GuestController',
+          controllerAs:'guestCtrl'
         })
         .state({
           name: 'create-guest',
