@@ -45,9 +45,33 @@
             return response.data;
           });
       }
+
+      /**
+       * Deletes a reservation in the API based on the provided ID
+       * @param  {String} id The reservation ID to delete
+       * @return {Promise}
+       */
+      function deleteRes(id) {
+        if (typeof(id) !== 'string' || !id.length) {
+          return Promise.reject('You must provide an ID to delete a reservation.');
+        }
+
+        return $http({
+          url: 'https://platypus-hotelier-api.herokuapp.com/api/Reservations/' + id,
+          method: 'DELETE',
+          headers: {
+            'Authorization': StaffService.getToken()
+          }
+        })
+        .then(function handleResponse(response) {
+          return response.data;
+        });
+      }
+
       return {
         createRes: createRes,
-        getAllRes: getAllRes
+        getAllRes: getAllRes,
+        deleteRes: deleteRes
       };
 
     }

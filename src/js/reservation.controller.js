@@ -11,6 +11,8 @@
 
     vm.reservations = [];
     vm.reservation = {};
+    vm.message = null;
+    vm.hasError = false;
 
     vm.createRes = function createRes(reservation) {
       ReservationService.createRes(reservation)
@@ -20,6 +22,27 @@
       .catch(function handleError(err) {
         console.warn(err);
       });
+    };
+
+    /**
+     * Deletes a reservation using the Reservation Service and then fills the
+     * message on the scope to allow display of success or error on the page
+     * @param  {String} id The reservation to delete
+     * @return {Promise}
+     */
+    vm.deleteRes = function deleteRes(id) {
+      vm.hasError = false;
+      return ReservationService.deleteRes(id)
+        .then(function showDeleteSuccess() {
+          vm.message = 'That reservation has been deleted!';
+          vm.hasError = false;
+          vm.getAllRes();
+        })
+        .catch(function showDeleteError(err) {
+          console.warn(err);
+          vm.message = 'There was a problem deleting that reservation.';
+          vm.hasError = true;
+        });
     };
 
     vm.getAllRes = function getAllRes() {

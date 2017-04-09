@@ -1,5 +1,9 @@
 <h2>Upcoming Reservations</h2>
 
+<p ng-cloak ng-show='resCtrl.message' ng-class='{ alert:true, "alert-warning":resCtrl.hasError, "alert-success":!resCtrl.hasError }'>
+  {{resCtrl.message}}
+</p>
+
 <article ng-repeat='reservation in resCtrl.reservations' class='panel panel-info'>
   <section class='panel-heading'>
     <h3 class='panel-title'>{{reservation.checkinDate}} - Room #{{reservation.roomId}}</h3>
@@ -11,7 +15,9 @@
 
     Check out: {{reservation.checkoutDate}}
 
-    <button type='submit' name='delete' class='btn btn-danger col-xs-2'>Delete</button>
+    <button class='btn btn-danger col-xs-2' ng-click='resCtrl.deleteRes(reservation.id)'>
+      Delete
+    </button>
   </p>
 
 </article>
