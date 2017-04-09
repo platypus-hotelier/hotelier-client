@@ -1,9 +1,13 @@
-<h2>ALL GUESTS</h2>
+<h2>All Guests</h2>
 
-<main class='all-guests'>
-<ul class='each-guest' ng-repeat='guest in guestCtrl.guest'>
-  <li><h3 class='guest-name'>{{guest.fullName}}</h3></li>
-  <li>{{guest.email}}</li>
-  <li>{{guest.phone}}</li>
-</ul>
-</main>
+<article ng-repeat='guest in guestCtrl' class='panel'>
+  <section class='panel-heading'>
+    <h3>{{guest.fullName}}</h3>
+  </section>
+  <section>
+    <p>{{guest.email}}</p>
+    <p>{{guest.phone}}</p>
+    <p>{{guest.id}}</p>
+  </section>
+
+</article>
