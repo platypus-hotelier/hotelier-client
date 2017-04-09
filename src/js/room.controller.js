@@ -16,6 +16,7 @@
       RoomService.getAllRooms()
       .then(function handleRoomData(data) {
         vm.rooms = data;
+        console.log(data);
       })
       .catch(function handleError(err) {
         console.warn(err);
