@@ -19,7 +19,7 @@
           data: {
               checkinDate: reservation.checkinDate,
               checkoutDate: reservation.checkoutDate,
-              numberOfGuests: reservation.umberOfGuests,
+              numberOfGuests: reservation.numberOfGuests,
               guestId: reservation.guestId,
               roomId: reservation.roomId
           }
