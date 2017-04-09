@@ -1,13 +1,12 @@
 <h2>All Guests</h2>
 
-<article ng-repeat='guest in guestCtrl' class='panel'>
-  <section class='panel-heading'>
-    <h3>{{guest.fullName}}</h3>
-  </section>
-  <section>
-    <p>{{guest.email}}</p>
-    <p>{{guest.phone}}</p>
-    <p>{{guest.id}}</p>
-  </section>
+<article ng-repeat='info in guestCtrl.guest'
+         class='panel panel-default col-xs-10 col-md-6 col-lg-4'>
+         
+    <h3>{{info.fullName}}</h3>
+
+    <p><strong>Email: </strong>{{info.email}}</p>
+    <p><strong>Phone: </strong>{{info.phone}}</p>
+    <p><strong>Guest ID: </strong>{{info.id}}</p>
 
 </article>
