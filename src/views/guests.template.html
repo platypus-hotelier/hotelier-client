@@ -1,7 +1,9 @@
-<h2>LIST ALL GUESTS HERE</h2>
+<h2>ALL GUESTS</h2>
 
-<p ng-repeat='guest in guestCtrl.guest'>
-
-{{guest}}
-
-</p>
+<main class='all-guests'>
+<ul class='each-guest' ng-repeat='guest in guestCtrl.guest'>
+  <li><h3 class='guest-name'>{{guest.fullName}}</h3></li>
+  <li>{{guest.email}}</li>
+  <li>{{guest.phone}}</li>
+</ul>
+</main>

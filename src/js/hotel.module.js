@@ -60,11 +60,6 @@
           controllerAs: 'guestCtrl'
         })
         .state({
-          name: 'new-guest',
-          url: '/new-guest',
-          templateUrl: 'views/new-guest.template.html'
-        })
-        .state({
           name: 'not-found',
           url: '/not-found',
           templateUrl: 'views/not-found.template.html'
