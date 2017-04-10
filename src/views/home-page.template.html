@@ -1,13 +1,11 @@
-<form class='form-group form-inline'>
+<form class='form-group form-inline row'>
   <input type='number' class='form-control col-xs-8 col-md-6 col-lg-4'  min='0' name='reservation-number' placeholder='Reservation ID' required>
   <input type='submit' value='Find reservation'
          class='form-control btn btn-default submitBtn col-xs-2 col-md-1 col-lg-1'>
 </form>
 
-<article ng-repeat='room in roomCtrl.rooms' class='panel panel-default'>
-  <section class='panel-body col-xs-12 col-md-4 col-lg-3'>
+<article ng-repeat='room in roomCtrl.rooms' class='well col-xs-12 col-md-4 col-lg-3'>
     <h3>ROOM {{room.number}}</h3>
     <p>from ${{room.rate}} per night</p>
     <p>Room ID: {{room.id}}</p>
-  </section>
 </article>
