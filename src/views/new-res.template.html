@@ -3,10 +3,12 @@
 <form ng-submit='resCtrl.createRes(resCtrl.reservation)' class='form-group col-lg-8'>
 
   <label for='checkinDate'>Check In</label>
-  <input type='date' name='checkinDate' class='form-control' ng-model='resCtrl.reservation.checkinDate'>
+  <input type='date' name='checkinDate' class='form-control'
+         ng-model='resCtrl.reservation.checkinDate'>
 
   <label for='checkoutDate'>Check Out</label>
-  <input type='date' name='checkoutDate' class='form-control' ng-model='resCtrl.reservation.checkoutDate'>
+  <input type='date' name='checkoutDate' class='form-control'
+         ng-model='resCtrl.reservation.checkoutDate'>
 
   <label for='numberOfGuests'>Number Of Guests</label>
   <input type='number' min='1' name='numberOfGuests' class='form-control'
