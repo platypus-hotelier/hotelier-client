@@ -82,6 +82,23 @@ module.exports = function(grunt) {
         files:['src/js/*.js'],
         tasks: ['concat', 'babel']
       }
+    },
+    karma: {
+      all: {
+        options: {
+          frameworks: ['mocha', 'chai'],
+          browsers: ['Chrome'],
+          singleRun: true,
+          files: [
+            'node_modules/angular/angular.js',
+            'node_modules/angular-mocks/angular-mocks.js',
+            'node_modules/angular-ui-router/release/angular-ui-router.js',
+            'src/js/hotel.module.js',
+            'src/**/*.js',
+            'test/**/*.spec.js'
+          ]
+        }
+      }
     }
 
 
@@ -93,6 +110,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-karma');
 
   grunt.registerTask('default', ['clean', 'concat', 'babel', 'copy', 'sass']);
 
